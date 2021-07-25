@@ -1,4 +1,7 @@
 import {makeStyles} from '@material-ui/core';
+import { createTheme } from '@material-ui/core/styles';
+
+const theme = createTheme();
 const useStyles = makeStyles({
     containermt:{
         marginTop:30
@@ -31,7 +34,10 @@ const useStyles = makeStyles({
 
     },
     grow:{
-            flexGrow:1
+            flexGrow:0,
+            [theme.breakpoints.up('md')]:{  //md es mayor que 900 pixeles
+                flexGrow:1
+            }
     },
     linkAppBarLogo:{
         display: "inline-flex",
@@ -49,6 +55,35 @@ const useStyles = makeStyles({
         display : "inline-flex",
         alignItems:"center",
         padding:"6px 16px"
+    },
+    list:{
+        width:250
+    },
+    listItem:{
+        padding:0
+    },
+    linkAppBarMobile:{
+
+        display:"inline-flex",
+        alignItems: "center",
+        width:"100%",
+        padding:"8px 16px"
+    },
+    listItemIcon:{
+        minWidth:35
+    },
+    sectionDesktop:{
+        display:"none",
+        [theme.breakpoints.up('md')]:{  //md es mayor que 900 pixeles
+            display:"flex"
+        }
+    },
+    sectionMobile:{
+        display:"flex",
+        flexGrow:1,
+        [theme.breakpoints.up('md')]:{  //md es mayor que 900 pixeles
+            display:"none"
+        }
     }
     })
 
