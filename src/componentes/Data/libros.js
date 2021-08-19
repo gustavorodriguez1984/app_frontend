@@ -1,0 +1,29 @@
+const librosArray =[];
+let key =0;
+
+export const agregarLibro=(libro)=>{
+    let libroJson = libro;
+    key++;
+    libroJson.key = key;
+    librosArray.push(libroJson);
+    console.log("data libro", librosArray);
+}
+export const listarLibros=(libro)=>{
+   return librosArray;
+}
+export const obtenerLibroKey=(clave)=>{
+    const objLibro = librosArray.find(libro =>{return libro.key ===clave})
+    return objLibro;
+ }
+
+ export const editarLibro=(dataLibro)=>{
+   librosArray.foreach(libro =>{
+    if(dataLibro.key ===libro.key){
+        
+        libro.categoria = dataLibro.categoriaE;
+        libro.titulo= dataLibro.tituloE;
+        libro.autor =dataLibro.autorE;
+    }
+   })
+    return librosArray;
+ }

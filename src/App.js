@@ -4,8 +4,12 @@ import { BrowserRouter as Router,Switch,Route } from 'react-router-dom';
 import MenuAppBar from './componentes/navegacion/MenuAppBar';
 import Login from './componentes/seguridad/Login';
 import RegistrarUsuario from './componentes/seguridad/RegistrarUsuario';
-import Libro from './componentes/pantallas/Libro';
+import Productos from './componentes/pantallas/Productos';
 import theme from './theme/theme';
+import DetalleProducto from './componentes/pantallas/DetalleProducto';
+import CarritoCompras from './componentes/pantallas/CarritoCompras';
+
+
 
 
 function App() {
@@ -16,7 +20,9 @@ function App() {
       <Switch>
       <Route exact path="/login" component={Login}/>
       <Route exact path="/registrar" component={RegistrarUsuario}/>
-      <Route exact path="/" component={Libro}/>
+      <Route exact path="/" component={Productos}/>
+      <Route exact path="/detalleProducto/:id" component={DetalleProducto}/>
+      <Route exact path="/carrito" component={CarritoCompras}/>
       </Switch>
       </Router>
     

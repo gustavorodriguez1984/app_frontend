@@ -95,7 +95,54 @@ const useStyles = makeStyles({
         [theme.breakpoints.up('md')]:{  //md es mayor que 900 pixeles
             display:"none"
         }
+    },
+    text_title:{
+        fontWeight:600,
+        color:"#494949",
+        marginBottom:10
+    },
+    media:{
+        height:250,
+        backgroundColor:"#F2F2F2",
+        margin:"15px 15px 0 15px"
+
+    },
+    price:{
+        float:"right",
+        backgroundColor:"#0f80aa",
+        padding:"0 20px 0 20px"
+    },
+    text_card:{
+        fontWeight:"bold",
+        color:"#656565",
+        marginBottom:8
+
+    },
+    PaperImg:{
+
+    backgroundColor:"#F2F2F2"
+    },
+    mediaDetalle:{
+        width:380,
+        height:380,
+        margin:"auto"
+      
+    },
+    text_detalle:{
+
+        fontWeight:500,
+        color:"#494949",
+        marginBottom:5
+    },
+    imgProductoCC:{
+        backgroundColor:"#F2F2F2",
+        width:80,
+        height:70
+    },
+    paperPadding:{
+        padding:20
     }
+
     })
 
     export default useStyles;
