@@ -19,8 +19,11 @@ import {
 import React from "react";
 import useStyles from "../../theme/useStyles";
 import { ProductoArray } from "../Data/dataPrueba";
-const CarritoCompras = () => {
+const CarritoCompras = (props) => {
   const miArray = ProductoArray;
+  const realizarCompra = () => {
+    props.history.push("/procesoCompra");
+  };
   const classes = useStyles();
 
   return (
@@ -79,8 +82,8 @@ const CarritoCompras = () => {
             </Typography>
             <Typography className={classes.text_title}>$143.46</Typography>
             <Divider className={classes.gridmb}></Divider>
-            <Button variant="containded" color="primary" size="large">
-              REALIZAR COPMRA
+            <Button variant="containded" color="primary" size="large" onClick={realizarCompra}>
+              REALIZAR COMPRA
             </Button>
           </Paper>
         </Grid>
