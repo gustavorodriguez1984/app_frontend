@@ -22,11 +22,11 @@ const useStyles = makeStyles({
         marginBottom :10
     },
     gridmb:{
-        marginBottom :10
+        marginBottom :20
     },
     link:{
     
-        marginTop:8,
+        marginTop:10,
         fontSize:"1.1rem",
         fontFamily:"Roboto",
         lineHeight :1.5,
@@ -166,6 +166,23 @@ const useStyles = makeStyles({
         width:50,
         height:40
     },
+    text_envio:{
+        lineHeight:3
+    },
+    alertNotDelivered:{
+       marginTop:5,
+       padding:"15px 15px 5px 15px",
+       marginBottom:20,
+       backgroundColor:"#ffcccc"
+
+    },
+    alertDelivered:{
+        marginTop:5,
+        padding:"15px 15px 5px 15px",
+        marginBottom:20,
+        backgroundColor:"#d6f5de"
+ 
+     }
 
     })
 

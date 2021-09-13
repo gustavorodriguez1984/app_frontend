@@ -23,7 +23,7 @@ import {
 } from "@material-ui/core";
 import React, { useState } from "react";
 import useStyles from "../../theme/useStyles";
-const ProcesoCompra = () => {
+const ProcesoCompra = (props) => {
   const [activeStep, setActiveStep] = useState(1);
   const continuarProceso = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -31,6 +31,11 @@ const ProcesoCompra = () => {
   const retrocederProceso = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
+
+  const realizarPedido=()=>{
+    const idCompra="d3996cb2-a6ea-4c42-868d-e4ca947e17c1";
+    props.history.push("/ordenCompra/"+ idCompra);
+  }
 
   const classes = useStyles();
   return (
@@ -247,6 +252,7 @@ const ProcesoCompra = () => {
                           variant="contained"
                           color="primary"
                           size="large"
+                          onClick={realizarPedido}
                         >
                           REALIZAR PEDIDO
                         </Button>
