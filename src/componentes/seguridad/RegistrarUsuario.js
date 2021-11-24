@@ -2,20 +2,23 @@ import { Container, Grid,Card,Typography, Avatar, Icon, Button,TextField} from '
 import React, { useState } from 'react';
 import useStyles from '../../theme/useStyles';
 import {Link} from 'react-router-dom';
+import { registrarUsuario } from '../../actions/UsuarioAction';
 
 const clearUsuario={
     nombre:'',
-    apellidos:'',
+    apellido:'',
     email:'',
-    password:''
+    password:'',
+    username:''
 }
 
 const RegistrarUsuario = () => {
     const [usuario,setUsuario]= useState({
         nombre:'',
-        apellidos:'',
+        apellido:'',
         email:'',
-        password:''
+        password:'',
+        username:''
     })
 
     const handleChange=(e)=>{
@@ -27,8 +30,11 @@ const RegistrarUsuario = () => {
     }
 
     const guardarUsuario=()=>{
-        console.log("Mi usuario es",usuario);
-        setUsuario(clearUsuario);
+        registrarUsuario(usuario).then(response=>{
+            console.log('el objeto response que envia el servidor',response);
+        });
+        // console.log("Mi usuario es",usuario);
+        // setUsuario(clearUsuario);
     }
     const classes = useStyles();
 
@@ -62,8 +68,17 @@ const RegistrarUsuario = () => {
                                 </Grid>
                                 <Grid item md={6} xs={12} className={classes.gridmb}>
                                     <TextField label="Apellidos" variant ="outlined" fullWidth
-                                    name="apellidos"
-                                    value={usuario.apellidos}
+                                    name="apellido"
+                                    value={usuario.apellido}
+                                    onChange ={handleChange}
+
+                                    />
+                                                            
+                                </Grid>
+                                <Grid item md={12} xs={12} className={classes.gridmb}>
+                                    <TextField label="UserName" variant ="outlined" fullWidth
+                                    name="username"
+                                    value={usuario.username}
                                     onChange ={handleChange}
 
                                     />
