@@ -12,7 +12,7 @@ const clearUsuario={
     username:''
 }
 
-const RegistrarUsuario = () => {
+const RegistrarUsuario = (props) => {
     const [usuario,setUsuario]= useState({
         nombre:'',
         apellido:'',
@@ -31,7 +31,9 @@ const RegistrarUsuario = () => {
 
     const guardarUsuario=()=>{
         registrarUsuario(usuario).then(response=>{
+            props.history.push('/')
             console.log('el objeto response que envia el servidor',response);
+            window.localStorage.setItem('token',response.data.token);
         });
         // console.log("Mi usuario es",usuario);
         // setUsuario(clearUsuario);
