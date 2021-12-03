@@ -10,8 +10,10 @@ import {
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import useStyles from "../../../theme/useStyles";
+import { useStateValue } from "../../../contexto/store";
 
 const MenuCliente = () => {
+  const[{sesionUsuario},dispatch] = useStateValue();
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = useState(null);
   const handleClick = (e) => {
@@ -40,7 +42,11 @@ const MenuCliente = () => {
               className={classes.avatarPerfilAppBar}
               image="https://static.dafiti.com.co/p/frenezi-6606-640739-1-catalog-new.jpg"
             />
-            Jhon Peralta
+           {
+            sesionUsuario 
+           ? (sesionUsuario.autenticado ? sesionUsuario.usuario.nombre +' '+ sesionUsuario.usuario.apellido : "NO sesion")
+           :"No sesion"
+           }
             <Icon>keyboard_arrow_down</Icon>
           </div>
         </Button>
